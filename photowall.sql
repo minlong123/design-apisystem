@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2022-12-09 14:27:03
+-- Generation Time: 2022-12-30 22:59:38
 -- 服务器版本： 5.6.50-log
 -- PHP Version: 5.6.40
 
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `design_admin` (
 --
 
 INSERT INTO `design_admin` (`id`, `username`, `nickname`, `password`, `salt`, `avatar`, `email`, `mobile`, `loginfailure`, `logintime`, `loginip`, `createtime`, `updatetime`, `token`, `status`) VALUES
-(1, 'admin', 'Admin', '31398f5c5cea77d5ae27c118ce2dd799', '75a369', '/uploads/5f278861fd809a0a6e5cd58f740c6226.png', 'admin@admin.com', '', 0, 1670451704, '122.191.194.0', 1491635035, 1670451704, '073fe44c-ec60-488a-89a2-51140713ddda', 'normal');
+(1, 'admin', 'Admin', '31398f5c5cea77d5ae27c118ce2dd799', '75a369', '/uploads/5f278861fd809a0a6e5cd58f740c6226.png', 'admin@admin.com', '', 0, 1672400089, '183.147.86.129', 1491635035, 1672400089, 'f475c409-df82-4461-b0cc-cec6db5d0bf4', 'normal');
 
 -- --------------------------------------------------------
 
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `design_admin_log` (
   `ip` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT 'IP',
   `useragent` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT 'User-Agent',
   `createtime` bigint(16) DEFAULT NULL COMMENT '操作时间'
-) ENGINE=InnoDB AUTO_INCREMENT=357 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='管理员日志表';
+) ENGINE=InnoDB AUTO_INCREMENT=401 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='管理员日志表';
 
 --
 -- 转存表中的数据 `design_admin_log`
@@ -458,7 +458,52 @@ INSERT INTO `design_admin_log` (`id`, `admin_id`, `username`, `url`, `title`, `c
 (353, 1, 'admin', '/anfxzPowJW.php/photorecore/del', '照片墙提交记录 / 删除', '{"action":"del","ids":"13,12,11","params":""}', '122.191.194.0', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36', 1670403376),
 (354, 1, 'admin', '/anfxzPowJW.php/bannerecore/del', '横幅提交记录 / 删除', '{"action":"del","ids":"7","params":""}', '122.191.194.0', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36', 1670403380),
 (355, 1, 'admin', '/anfxzPowJW.php/waterphoto/del', '洗照片提交记录 / 删除', '{"action":"del","ids":"8,7","params":""}', '122.191.194.0', 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36', 1670403384),
-(356, 1, 'admin', '/anfxzPowJW.php/index/login', '登录', '{"__token__":"***","username":"admin","password":"***","captcha":"t3zm"}', '122.191.194.0', 'Mozilla/5.0 (Linux; Android 6.0.1; OPPO R9s Plus Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/4364 MMWEBSDK/20220505 Mobile Safari/537.36 MMWEBID/969 MicroMessenger/8.0.23.2160(0x28001756) WeChat/arm32 Weix', 1670451704);
+(356, 1, 'admin', '/anfxzPowJW.php/index/login', '登录', '{"__token__":"***","username":"admin","password":"***","captcha":"t3zm"}', '122.191.194.0', 'Mozilla/5.0 (Linux; Android 6.0.1; OPPO R9s Plus Build/MMB29M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/4364 MMWEBSDK/20220505 Mobile Safari/537.36 MMWEBID/969 MicroMessenger/8.0.23.2160(0x28001756) WeChat/arm32 Weix', 1670451704),
+(357, 1, 'admin', '/anfxzPowJW.php/index/login', '登录', '{"__token__":"***","username":"admin","password":"***","captcha":"hayb"}', '122.191.201.3', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308001f)', 1670569515),
+(358, 0, 'Unknown', '/anfxzPowJW.php/index/login', '', '{"__token__":"***","username":"admin","password":"***","captcha":"fdhd"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672394991),
+(359, 1, 'admin', '/anfxzPowJW.php/index/login', '登录', '{"__token__":"***","username":"admin","password":"***","captcha":"r5mr"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672395000),
+(360, 1, 'admin', '/anfxzPowJW.php/index/login', '登录', '{"__token__":"***","username":"admin","password":"***","captcha":"vdmv","keeplogin":"1"}', '183.137.47.220', 'Mozilla/5.0 (Linux; Android 12; M2102J2SC Build/SKQ1.211006.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/86.0.4240.99 XWEB/4375 MMWEBSDK/20221109 Mobile Safari/537.36 MMWEBID/4634 MicroMessenger/8.0.31.2281(0x28001F51) WeChat/arm64 W', 1672395644),
+(361, 1, 'admin', '/anfxzPowJW.php/index/login', '登录', '{"__token__":"***","username":"admin","password":"***","captcha":"FHUF","keeplogin":"1"}', '183.147.86.129', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63080029)', 1672400089),
+(362, 1, 'admin', '/anfxzPowJW.php/phototem/edit/ids/1?dialog=1', '照片墙模板管理 / 编辑', '{"dialog":"1","row":{"picimage":"\\/uploads\\/20221206\\/77c9275b0ca55fcbfa786b77c1b188b4.jpg","name":"爱心照片墙","coordinate":"[{&quot;left&quot;:93,&quot;top&quot;:286,&quot;width&quot;:75,&quot;height&quot;:117},{&quot;left&quot;:108,&quot;top&quot;:412,&quot;width&quot;:58,&quot;height&quot;:62},{&quot;left&quot;:171,&quot;top&quot;:227,&quot;width&quot;:112,&quot;height&quot;:119},{&quot;left&quot;:171,&quot;top&quot;:353,&quot;width&quot;:131,&quot;height&quot;:143},{&quot;left&quot;:197,&quot;top&quot;:503,&quot;width&quot;:105,&quot;height&quot;:62},{&quot;left&quot;:236,&quot;top&quot;:570,&quot;width&quot;:66,&quot;height&quot;:63},{&quot;left&quot;:288,&quot;top&quot;:279,&quot;width&quot;:71,&quot;height&quot;:67},{&quot;left&quot;:307,&quot;top&quot;:353,&quot;width&quot;:132,&quot;height&quot;:143},{&quot;left&quot;:307,&quot;top&quot;:503,&quot;width&quot;:132,&quot;height&quot;:142},{&quot;left&quot;:338,&quot;top&quot;:651,&quot;width&quot;:70,&quot;height&quot;:67},{&quot;left&quot;:464,&quot;top&quot;:227,&quot;width&quot;:113,&quot;height&quot;:119},{&quot;left&quot;:443,&quot;top&quot;:352,&quot;width&quot;:134,&quot;height&quot;:143},{&quot;left&quot;:443,&quot;top&quot;:503,&quot;width&quot;:104,&quot;height&quot;:62},{&quot;left&quot;:444,&quot;top&quot;:570,&quot;width&quot;:66,&quot;height&quot;:63},{&quot;left&quot;:582,&quot;top&quot;:286,&quot;width&quot;:75,&quot;height&quot;:117},{&quot;left&quot;:582,&quot;top&quot;:412,&quot;width&quot;:58,&quot;height&quot;:62}]"},"ids":"1"}', '183.147.86.129', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x63080029)', 1672400175),
+(363, 1, 'admin', '/anfxzPowJW.php/auth/rule/multi', '权限管理 / 菜单规则', '{"action":"","ids":"85","params":"ismenu=1"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401176),
+(364, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_actions"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401658),
+(365, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_photocate"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401691),
+(366, 1, 'admin', '/anfxzPowJW.php/command/command/action/command', '在线命令管理', '{"commandtype":"crud","isrelation":"0","local":"1","delete":"0","force":"0","table":"design_photocate","controller":"","model":"","setcheckboxsuffix":"","enumradiosuffix":"","imagefield":"","filefield":"","intdatesuffix":"","switchsuffix":"","citysuffix":"","selectpagesuffix":"","selectpagessuffix":"","ignorefields":"","sortfield":"","editorsuffix":"","headingfilterfield":"","tagsuffix":"","jsonsuffix":"","fixedcolumns":"","action":"command"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401694),
+(367, 1, 'admin', '/anfxzPowJW.php/command/command/action/execute', '在线命令管理', '{"commandtype":"crud","isrelation":"0","local":"1","delete":"0","force":"0","table":"design_photocate","controller":"","model":"","setcheckboxsuffix":"","enumradiosuffix":"","imagefield":"","filefield":"","intdatesuffix":"","switchsuffix":"","citysuffix":"","selectpagesuffix":"","selectpagessuffix":"","ignorefields":"","sortfield":"","editorsuffix":"","headingfilterfield":"","tagsuffix":"","jsonsuffix":"","fixedcolumns":"","action":"execute"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401695),
+(368, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_actions"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401700),
+(369, 1, 'admin', '/anfxzPowJW.php/command/get_controller_list', '在线命令管理', '{"q_word":[""],"pageNumber":"1","pageSize":"10","andOr":"OR ","orderBy":[["name","ASC"]],"searchTable":"tbl","showField":"name","keyField":"id","searchField":["name"],"name":""}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401750),
+(370, 1, 'admin', '/anfxzPowJW.php/command/get_controller_list', '在线命令管理', '{"q_word":["design_photocate"],"pageNumber":"1","pageSize":"10","andOr":"OR ","orderBy":[["name","ASC"]],"searchTable":"tbl","showField":"name","keyField":"id","searchField":["name"],"name":"design_photocate"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401751),
+(371, 1, 'admin', '/anfxzPowJW.php/command/get_controller_list', '在线命令管理', '{"q_word":["photocate"],"pageNumber":"1","pageSize":"10","andOr":"OR ","orderBy":[["name","ASC"]],"searchTable":"tbl","showField":"name","keyField":"id","searchField":["name"],"name":"photocate"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401753),
+(372, 1, 'admin', '/anfxzPowJW.php/command/get_controller_list', '在线命令管理', '{"q_word":[""],"pageNumber":"1","pageSize":"10","andOr":"OR ","orderBy":[["name","ASC"]],"searchTable":"tbl","showField":"name","keyField":"id","searchField":["name"],"name":""}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401754),
+(373, 1, 'admin', '/anfxzPowJW.php/command/command/action/command', '在线命令管理', '{"commandtype":"menu","allcontroller":"0","delete":"0","force":"0","controllerfile_text":"","controllerfile":"Photocate.php","action":"command"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401757),
+(374, 1, 'admin', '/anfxzPowJW.php/command/command/action/execute', '在线命令管理', '{"commandtype":"menu","allcontroller":"0","delete":"0","force":"0","controllerfile_text":"","controllerfile":"Photocate.php","action":"execute"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401758),
+(375, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_actions"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401935),
+(376, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_phototem"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401940),
+(377, 1, 'admin', '/anfxzPowJW.php/command/command/action/command', '在线命令管理', '{"commandtype":"crud","isrelation":"0","local":"1","delete":"0","force":"1","table":"design_phototem","controller":"","model":"","setcheckboxsuffix":"","enumradiosuffix":"","imagefield":"","filefield":"","intdatesuffix":"","switchsuffix":"","citysuffix":"","selectpagesuffix":"","selectpagessuffix":"","ignorefields":"","sortfield":"","editorsuffix":"","headingfilterfield":"","tagsuffix":"","jsonsuffix":"","fixedcolumns":"","action":"command"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401942),
+(378, 1, 'admin', '/anfxzPowJW.php/command/command/action/execute', '在线命令管理', '{"commandtype":"crud","isrelation":"0","local":"1","delete":"0","force":"1","table":"design_phototem","controller":"","model":"","setcheckboxsuffix":"","enumradiosuffix":"","imagefield":"","filefield":"","intdatesuffix":"","switchsuffix":"","citysuffix":"","selectpagesuffix":"","selectpagessuffix":"","ignorefields":"","sortfield":"","editorsuffix":"","headingfilterfield":"","tagsuffix":"","jsonsuffix":"","fixedcolumns":"","action":"execute"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401943),
+(379, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_actions"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401948),
+(380, 1, 'admin', '/anfxzPowJW.php/command/get_controller_list', '在线命令管理', '{"q_word":[""],"pageNumber":"1","pageSize":"10","andOr":"OR ","orderBy":[["name","ASC"]],"searchTable":"tbl","showField":"name","keyField":"id","searchField":["name"],"name":""}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401949),
+(381, 1, 'admin', '/anfxzPowJW.php/command/get_controller_list', '在线命令管理', '{"q_word":["design_phototem"],"pageNumber":"1","pageSize":"10","andOr":"OR ","orderBy":[["name","ASC"]],"searchTable":"tbl","showField":"name","keyField":"id","searchField":["name"],"name":"design_phototem"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401951),
+(382, 1, 'admin', '/anfxzPowJW.php/command/get_controller_list', '在线命令管理', '{"q_word":["phototem"],"pageNumber":"1","pageSize":"10","andOr":"OR ","orderBy":[["name","ASC"]],"searchTable":"tbl","showField":"name","keyField":"id","searchField":["name"],"name":"phototem"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401952),
+(383, 1, 'admin', '/anfxzPowJW.php/command/get_controller_list', '在线命令管理', '{"q_word":[""],"pageNumber":"1","pageSize":"10","andOr":"OR ","orderBy":[["name","ASC"]],"searchTable":"tbl","showField":"name","keyField":"id","searchField":["name"],"name":""}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401952),
+(384, 1, 'admin', '/anfxzPowJW.php/command/command/action/command', '在线命令管理', '{"commandtype":"menu","allcontroller":"0","delete":"0","force":"1","controllerfile_text":"","controllerfile":"Phototem.php","action":"command"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401954),
+(385, 1, 'admin', '/anfxzPowJW.php/command/command/action/execute', '在线命令管理', '{"commandtype":"menu","allcontroller":"0","delete":"0","force":"1","controllerfile_text":"","controllerfile":"Phototem.php","action":"execute"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401954),
+(386, 1, 'admin', '/anfxzPowJW.php/photocate/add?dialog=1', '照片墙模板分类 / 添加', '{"dialog":"1","row":{"name":"测试分类","weigh":""}}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401987),
+(387, 1, 'admin', '/anfxzPowJW.php/photocate/add?dialog=1', '照片墙模板分类 / 添加', '{"dialog":"1","row":{"name":"测试分类2","weigh":""}}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672401996),
+(388, 1, 'admin', '/anfxzPowJW.php/phototem/edit/ids/1?dialog=1', '照片墙模板管理 / 编辑', '{"dialog":"1","row":{"picimage":"\\/uploads\\/20221206\\/77c9275b0ca55fcbfa786b77c1b188b4.jpg","name":"爱心照片墙","coordinate":"[{&quot;left&quot;:93,&quot;top&quot;:286,&quot;width&quot;:75,&quot;height&quot;:117},{&quot;left&quot;:108,&quot;top&quot;:412,&quot;width&quot;:58,&quot;height&quot;:62},{&quot;left&quot;:171,&quot;top&quot;:227,&quot;width&quot;:112,&quot;height&quot;:119},{&quot;left&quot;:171,&quot;top&quot;:353,&quot;width&quot;:131,&quot;height&quot;:143},{&quot;left&quot;:197,&quot;top&quot;:503,&quot;width&quot;:105,&quot;height&quot;:62},{&quot;left&quot;:236,&quot;top&quot;:570,&quot;width&quot;:66,&quot;height&quot;:63},{&quot;left&quot;:288,&quot;top&quot;:279,&quot;width&quot;:71,&quot;height&quot;:67},{&quot;left&quot;:307,&quot;top&quot;:353,&quot;width&quot;:132,&quot;height&quot;:143},{&quot;left&quot;:307,&quot;top&quot;:503,&quot;width&quot;:132,&quot;height&quot;:142},{&quot;left&quot;:338,&quot;top&quot;:651,&quot;width&quot;:70,&quot;height&quot;:67},{&quot;left&quot;:464,&quot;top&quot;:227,&quot;width&quot;:113,&quot;height&quot;:119},{&quot;left&quot;:443,&quot;top&quot;:352,&quot;width&quot;:134,&quot;height&quot;:143},{&quot;left&quot;:443,&quot;top&quot;:503,&quot;width&quot;:104,&quot;height&quot;:62},{&quot;left&quot;:444,&quot;top&quot;:570,&quot;width&quot;:66,&quot;height&quot;:63},{&quot;left&quot;:582,&quot;top&quot;:286,&quot;width&quot;:75,&quot;height&quot;:117},{&quot;left&quot;:582,&quot;top&quot;:412,&quot;width&quot;:58,&quot;height&quot;:62}]","photocate_id":"1"},"ids":"1"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672402008),
+(389, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_actions"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672402499),
+(390, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_phototem"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672402538);
+INSERT INTO `design_admin_log` (`id`, `admin_id`, `username`, `url`, `title`, `content`, `ip`, `useragent`, `createtime`) VALUES
+(391, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_actions"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672402569),
+(392, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_actions"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672402569),
+(393, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_actions"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672402569),
+(394, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_actions"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672402569),
+(395, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_photocate"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672402581),
+(396, 1, 'admin', '/anfxzPowJW.php/command/get_field_list', '在线命令管理', '{"table":"design_photocate"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672402581),
+(397, 1, 'admin', '/anfxzPowJW.php/command/command/action/command', '在线命令管理', '{"commandtype":"crud","isrelation":"1","local":"1","delete":"0","force":"1","table":"design_phototem","controller":"","model":"","fields":["photocate_id"],"relation":{"2":{"relation":"design_photocate","relationmode":"belongsto","relationforeignkey":"photocate_id","relationprimarykey":"id","relationfields":["name"]}},"setcheckboxsuffix":"","enumradiosuffix":"","imagefield":"","filefield":"","intdatesuffix":"","switchsuffix":"","citysuffix":"","selectpagesuffix":"","selectpagessuffix":"","ignorefields":"","sortfield":"","editorsuffix":"","headingfilterfield":"","tagsuffix":"","jsonsuffix":"","fixedcolumns":"","action":"command"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672402612),
+(398, 1, 'admin', '/anfxzPowJW.php/command/command/action/execute', '在线命令管理', '{"commandtype":"crud","isrelation":"1","local":"1","delete":"0","force":"1","table":"design_phototem","controller":"","model":"","fields":["photocate_id"],"relation":{"2":{"relation":"design_photocate","relationmode":"belongsto","relationforeignkey":"photocate_id","relationprimarykey":"id","relationfields":["name"]}},"setcheckboxsuffix":"","enumradiosuffix":"","imagefield":"","filefield":"","intdatesuffix":"","switchsuffix":"","citysuffix":"","selectpagesuffix":"","selectpagessuffix":"","ignorefields":"","sortfield":"","editorsuffix":"","headingfilterfield":"","tagsuffix":"","jsonsuffix":"","fixedcolumns":"","action":"execute"}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672402613),
+(399, 1, 'admin', '/anfxzPowJW.php/phototem/add?dialog=1', '照片墙模板管理 / 添加', '{"dialog":"1","row":{"picimage":"\\/uploads\\/63095bf98be4ce00e6c0e9ede314c1e4.jpg","name":"测试模板","coordinate":"沙发萨芬到三","photocate_id":"1"}}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672403101),
+(400, 1, 'admin', '/anfxzPowJW.php/phototem/del', '照片墙模板管理 / 删除', '{"action":"del","ids":"2","params":""}', '122.191.194.255', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36 NetType/WIFI MicroMessenger/7.0.20.1781(0x6700143B) WindowsWechat(0x6308011a)', 1672403112);
 
 -- --------------------------------------------------------
 
@@ -506,7 +551,7 @@ CREATE TABLE IF NOT EXISTS `design_attachment` (
   `uploadtime` bigint(16) DEFAULT NULL COMMENT '上传时间',
   `storage` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'local' COMMENT '存储位置',
   `sha1` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT '文件 sha1编码'
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='附件表';
+) ENGINE=InnoDB AUTO_INCREMENT=114 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='附件表';
 
 --
 -- 转存表中的数据 `design_attachment`
@@ -611,7 +656,8 @@ INSERT INTO `design_attachment` (`id`, `category`, `admin_id`, `user_id`, `url`,
 (109, '', 0, 0, '/uploads/393119f41b99aec7f889401cec34bce8.png', '1080', '1920', 'png', 0, 'Screenshot_2022-12-05-10-30-55-14.png', 538734, 'image/png', '', 1670393980, 1670393980, 1670393980, 'local', '4f9d2c3af25c6131b1038de16737617179af638c'),
 (110, '', 0, 0, '/uploads/e52cc099e4d80ad7ab07ddd5e0ce8656.jpg', '720', '720', 'jpg', 0, '1670043578858.jpg', 24153, 'image/jpeg', '', 1670393985, 1670393985, 1670393985, 'local', 'eec2c622fa6d78b20d5588a41e6a8efa3ee6d735'),
 (111, '', 0, 0, '/uploads/76f150982c1c306bf44708c7f9fc6a4d.jpg', '600', '800', 'jpg', 0, '4a94a0534a9c209e79003fcbc9c882d.jpg', 89117, 'image/jpeg', '', 1670394014, 1670394014, 1670394014, 'local', '661549045f51fbc40dcb3ac32fc3a8d52c2a9a7b'),
-(112, '', 0, 0, '/uploads/d80c171b4bc87dcbd9acc4a1cbbbd8b4.png', '1080', '1920', 'png', 0, 'Screenshot_2022-12-06-11-37-31-21.png', 665535, 'image/png', '', 1670403780, 1670403780, 1670403780, 'local', '8fa9f3d27a2e5c4b20867a091b08c83407c64f0b');
+(112, '', 0, 0, '/uploads/d80c171b4bc87dcbd9acc4a1cbbbd8b4.png', '1080', '1920', 'png', 0, 'Screenshot_2022-12-06-11-37-31-21.png', 665535, 'image/png', '', 1670403780, 1670403780, 1670403780, 'local', '8fa9f3d27a2e5c4b20867a091b08c83407c64f0b'),
+(113, '', 0, 0, '/uploads/63095bf98be4ce00e6c0e9ede314c1e4.jpg', '600', '800', 'jpg', 0, '9f38ca4077a7bb98e4a0d23f896be2e.jpg', 85776, 'image/jpeg', '', 1670646008, 1670646008, 1670646008, 'local', '35625ab896c3e15cb4c509fbe4672a849e71dbe2');
 
 -- --------------------------------------------------------
 
@@ -683,7 +729,7 @@ CREATE TABLE IF NOT EXISTS `design_auth_rule` (
   `updatetime` bigint(16) DEFAULT NULL COMMENT '更新时间',
   `weigh` int(10) NOT NULL DEFAULT '0' COMMENT '权重',
   `status` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT '状态'
-) ENGINE=InnoDB AUTO_INCREMENT=140 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='节点表';
+) ENGINE=InnoDB AUTO_INCREMENT=146 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='节点表';
 
 --
 -- 转存表中的数据 `design_auth_rule`
@@ -772,7 +818,7 @@ INSERT INTO `design_auth_rule` (`id`, `type`, `pid`, `name`, `title`, `icon`, `u
 (82, 'file', 79, 'user/rule/add', 'Add', 'fa fa-circle-o', '', '', '', 0, NULL, '', '', '', 1491635035, 1491635035, 0, 'normal'),
 (83, 'file', 79, 'user/rule/edit', 'Edit', 'fa fa-circle-o', '', '', '', 0, NULL, '', '', '', 1491635035, 1491635035, 0, 'normal'),
 (84, 'file', 79, 'user/rule/multi', 'Multi', 'fa fa-circle-o', '', '', '', 0, NULL, '', '', '', 1491635035, 1491635035, 0, 'normal'),
-(85, 'file', 0, 'command', '在线命令管理', 'fa fa-terminal', '', '', '', 0, NULL, '', 'zxmlgl', 'zaixianminglingguanli', 1670313490, 1670400070, 0, 'normal'),
+(85, 'file', 0, 'command', '在线命令管理', 'fa fa-terminal', '', '', '', 1, NULL, '', 'zxmlgl', 'zaixianminglingguanli', 1670313490, 1672401176, 0, 'normal'),
 (86, 'file', 85, 'command/index', '查看', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'zk', 'zhakan', 1670313490, 1670313490, 0, 'normal'),
 (87, 'file', 85, 'command/add', '添加', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'tj', 'tianjia', 1670313490, 1670313490, 0, 'normal'),
 (88, 'file', 85, 'command/detail', '详情', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'xq', 'xiangqing', 1670313490, 1670313490, 0, 'normal'),
@@ -792,11 +838,11 @@ INSERT INTO `design_auth_rule` (`id`, `type`, `pid`, `name`, `title`, `icon`, `u
 (102, 'file', 98, 'sourcman/del', '删除', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'sc', 'shanchu', 1670314537, 1670314759, 0, 'normal'),
 (103, 'file', 98, 'sourcman/multi', '批量更新', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'plgx', 'pilianggengxin', 1670314537, 1670314759, 0, 'normal'),
 (104, 'file', 0, 'phototem', '照片墙模板管理', 'fa fa-circle-o', '', '', '', 1, NULL, '', 'zpqmbgl', 'zhaopianqiangmubanguanli', 1670315101, 1670315101, 0, 'normal'),
-(105, 'file', 104, 'phototem/index', '查看', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'zk', 'zhakan', 1670315101, 1670392615, 0, 'normal'),
-(106, 'file', 104, 'phototem/add', '添加', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'tj', 'tianjia', 1670315101, 1670392615, 0, 'normal'),
-(107, 'file', 104, 'phototem/edit', '编辑', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'bj', 'bianji', 1670315101, 1670392615, 0, 'normal'),
-(108, 'file', 104, 'phototem/del', '删除', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'sc', 'shanchu', 1670315101, 1670392615, 0, 'normal'),
-(109, 'file', 104, 'phototem/multi', '批量更新', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'plgx', 'pilianggengxin', 1670315101, 1670392615, 0, 'normal'),
+(105, 'file', 104, 'phototem/index', '查看', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'zk', 'zhakan', 1670315101, 1672401954, 0, 'normal'),
+(106, 'file', 104, 'phototem/add', '添加', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'tj', 'tianjia', 1670315101, 1672401954, 0, 'normal'),
+(107, 'file', 104, 'phototem/edit', '编辑', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'bj', 'bianji', 1670315101, 1672401954, 0, 'normal'),
+(108, 'file', 104, 'phototem/del', '删除', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'sc', 'shanchu', 1670315101, 1672401954, 0, 'normal'),
+(109, 'file', 104, 'phototem/multi', '批量更新', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'plgx', 'pilianggengxin', 1670315101, 1672401954, 0, 'normal'),
 (110, 'file', 0, 'actions', '操作手册管理', 'fa fa-circle-o', '', '', '', 1, 'addtabs', '', 'czscgl', 'caozuoshouceguanli', 1670315180, 1670315363, 0, 'normal'),
 (111, 'file', 110, 'actions/index', '查看', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'zk', 'zhakan', 1670315180, 1670315338, 0, 'normal'),
 (112, 'file', 110, 'actions/add', '添加', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'tj', 'tianjia', 1670315180, 1670315338, 0, 'normal'),
@@ -826,7 +872,13 @@ INSERT INTO `design_auth_rule` (`id`, `type`, `pid`, `name`, `title`, `icon`, `u
 (136, 'file', 134, 'photorecore/add', '添加', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'tj', 'tianjia', 1670389917, 1670395752, 0, 'normal'),
 (137, 'file', 134, 'photorecore/edit', '编辑', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'bj', 'bianji', 1670389917, 1670395752, 0, 'normal'),
 (138, 'file', 134, 'photorecore/del', '删除', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'sc', 'shanchu', 1670389917, 1670395752, 0, 'normal'),
-(139, 'file', 134, 'photorecore/multi', '批量更新', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'plgx', 'pilianggengxin', 1670389917, 1670395752, 0, 'normal');
+(139, 'file', 134, 'photorecore/multi', '批量更新', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'plgx', 'pilianggengxin', 1670389917, 1670395752, 0, 'normal'),
+(140, 'file', 0, 'photocate', '照片墙模板分类', 'fa fa-circle-o', '', '', '', 1, NULL, '', 'zpqmbfl', 'zhaopianqiangmubanfenlei', 1672401758, 1672401758, 0, 'normal'),
+(141, 'file', 140, 'photocate/index', '查看', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'zk', 'zhakan', 1672401758, 1672401758, 0, 'normal'),
+(142, 'file', 140, 'photocate/add', '添加', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'tj', 'tianjia', 1672401758, 1672401758, 0, 'normal'),
+(143, 'file', 140, 'photocate/edit', '编辑', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'bj', 'bianji', 1672401758, 1672401758, 0, 'normal'),
+(144, 'file', 140, 'photocate/del', '删除', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'sc', 'shanchu', 1672401758, 1672401758, 0, 'normal'),
+(145, 'file', 140, 'photocate/multi', '批量更新', 'fa fa-circle-o', '', '', '', 0, NULL, '', 'plgx', 'pilianggengxin', 1672401758, 1672401758, 0, 'normal');
 
 -- --------------------------------------------------------
 
@@ -934,7 +986,7 @@ CREATE TABLE IF NOT EXISTS `design_command` (
   `createtime` bigint(16) unsigned DEFAULT NULL COMMENT '创建时间',
   `updatetime` bigint(16) unsigned DEFAULT NULL COMMENT '更新时间',
   `status` enum('successed','failured') NOT NULL DEFAULT 'failured' COMMENT '状态'
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COMMENT='在线命令表';
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COMMENT='在线命令表';
 
 --
 -- 转存表中的数据 `design_command`
@@ -977,7 +1029,12 @@ INSERT INTO `design_command` (`id`, `type`, `params`, `command`, `content`, `exe
 (34, 'crud', '["--force=1","--table=design_waterphoto"]', 'php think crud --force=1 --table=design_waterphoto', 'Build Successed', 1670395728, 1670395728, 1670395728, 'successed'),
 (35, 'menu', '["--controller=Waterphoto","--controller=Photorecore","--controller=Bannerecore"]', 'php think menu --controller=Waterphoto --controller=Photorecore --controller=Bannerecore', 'Build Successed!', 1670395752, 1670395752, 1670395752, 'successed'),
 (36, 'crud', '["--force=1","--table=design_bannerecore"]', 'php think crud --force=1 --table=design_bannerecore', 'Build Successed', 1670395892, 1670395892, 1670395892, 'successed'),
-(37, 'menu', '["--controller=Bannerecore"]', 'php think menu --controller=Bannerecore', 'Build Successed!', 1670395899, 1670395899, 1670395899, 'successed');
+(37, 'menu', '["--controller=Bannerecore"]', 'php think menu --controller=Bannerecore', 'Build Successed!', 1670395899, 1670395899, 1670395899, 'successed'),
+(38, 'crud', '["--table=design_photocate"]', 'php think crud --table=design_photocate', 'Build Successed', 1672401695, 1672401695, 1672401695, 'successed'),
+(39, 'menu', '["--controller=Photocate"]', 'php think menu --controller=Photocate', 'Build Successed!', 1672401758, 1672401758, 1672401758, 'successed'),
+(40, 'crud', '["--force=1","--table=design_phototem"]', 'php think crud --force=1 --table=design_phototem', 'Build Successed', 1672401943, 1672401943, 1672401943, 'successed'),
+(41, 'menu', '["--controller=Phototem"]', 'php think menu --controller=Phototem', 'Build Successed!', 1672401954, 1672401954, 1672401954, 'successed'),
+(42, 'crud', '["--force=1","--table=design_phototem","--fields=photocate_id","--relation=design_photocate","--relationmode=belongsto","--relationforeignkey=photocate_id","--relationprimarykey=id","--relationfields=name"]', 'php think crud --force=1 --table=design_phototem --fields=photocate_id --relation=design_photocate --relationmode=belongsto --relationforeignkey=photocate_id --relationprimarykey=id --relationfields=name', 'Build Successed', 1672402613, 1672402613, 1672402613, 'successed');
 
 -- --------------------------------------------------------
 
@@ -1063,6 +1120,28 @@ INSERT INTO `design_fontcolor` (`id`, `colors`, `createtime`, `updatetime`) VALU
 -- --------------------------------------------------------
 
 --
+-- 表的结构 `design_photocate`
+--
+
+CREATE TABLE IF NOT EXISTS `design_photocate` (
+  `id` int(11) NOT NULL COMMENT 'id标识',
+  `name` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '分类名',
+  `weigh` int(11) DEFAULT NULL COMMENT '排序',
+  `createtime` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '创建时间',
+  `updatetime` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '更新时间'
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='照片墙模板分类';
+
+--
+-- 转存表中的数据 `design_photocate`
+--
+
+INSERT INTO `design_photocate` (`id`, `name`, `weigh`, `createtime`, `updatetime`) VALUES
+(1, '测试分类', 1, '1672401987', '1672401987'),
+(2, '测试分类2', 2, '1672401996', '1672401996');
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `design_photorecore`
 --
 
@@ -1076,7 +1155,7 @@ CREATE TABLE IF NOT EXISTS `design_photorecore` (
   `printimage` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '要打印的图片',
   `createtime` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '创建时间',
   `updatetime` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '更新时间'
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='照片墙提交记录';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='照片墙提交记录';
 
 -- --------------------------------------------------------
 
@@ -1090,15 +1169,16 @@ CREATE TABLE IF NOT EXISTS `design_phototem` (
   `createtime` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '创建时间',
   `updatetime` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '更新时间',
   `name` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '模板名称',
-  `coordinate` text COLLATE utf8mb4_unicode_ci COMMENT '模板定位'
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='照片墙模板管理';
+  `coordinate` text COLLATE utf8mb4_unicode_ci COMMENT '模板定位',
+  `photocate_id` int(11) DEFAULT NULL COMMENT '模板分类'
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='照片墙模板管理';
 
 --
 -- 转存表中的数据 `design_phototem`
 --
 
-INSERT INTO `design_phototem` (`id`, `picimage`, `createtime`, `updatetime`, `name`, `coordinate`) VALUES
-(1, '/uploads/20221206/77c9275b0ca55fcbfa786b77c1b188b4.jpg', '1670315156', '1670393273', '爱心照片墙', '[{"left":93,"top":286,"width":75,"height":117},{"left":108,"top":412,"width":58,"height":62},{"left":171,"top":227,"width":112,"height":119},{"left":171,"top":353,"width":131,"height":143},{"left":197,"top":503,"width":105,"height":62},{"left":236,"top":570,"width":66,"height":63},{"left":288,"top":279,"width":71,"height":67},{"left":307,"top":353,"width":132,"height":143},{"left":307,"top":503,"width":132,"height":142},{"left":338,"top":651,"width":70,"height":67},{"left":464,"top":227,"width":113,"height":119},{"left":443,"top":352,"width":134,"height":143},{"left":443,"top":503,"width":104,"height":62},{"left":444,"top":570,"width":66,"height":63},{"left":582,"top":286,"width":75,"height":117},{"left":582,"top":412,"width":58,"height":62}]');
+INSERT INTO `design_phototem` (`id`, `picimage`, `createtime`, `updatetime`, `name`, `coordinate`, `photocate_id`) VALUES
+(1, '/uploads/20221206/77c9275b0ca55fcbfa786b77c1b188b4.jpg', '1670315156', '1672402008', '爱心照片墙', '[{"left":93,"top":286,"width":75,"height":117},{"left":108,"top":412,"width":58,"height":62},{"left":171,"top":227,"width":112,"height":119},{"left":171,"top":353,"width":131,"height":143},{"left":197,"top":503,"width":105,"height":62},{"left":236,"top":570,"width":66,"height":63},{"left":288,"top":279,"width":71,"height":67},{"left":307,"top":353,"width":132,"height":143},{"left":307,"top":503,"width":132,"height":142},{"left":338,"top":651,"width":70,"height":67},{"left":464,"top":227,"width":113,"height":119},{"left":443,"top":352,"width":134,"height":143},{"left":443,"top":503,"width":104,"height":62},{"left":444,"top":570,"width":66,"height":63},{"left":582,"top":286,"width":75,"height":117},{"left":582,"top":412,"width":58,"height":62}]', 1);
 
 -- --------------------------------------------------------
 
@@ -1381,7 +1461,7 @@ CREATE TABLE IF NOT EXISTS `design_waterphoto` (
   `photosize` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '洗照片尺寸',
   `createtime` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '添加时间',
   `updatetime` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '更新时间'
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='洗照片提交记录';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='洗照片提交记录';
 
 --
 -- Indexes for dumped tables
@@ -1489,6 +1569,12 @@ ALTER TABLE `design_fontcolor`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `design_photocate`
+--
+ALTER TABLE `design_photocate`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `design_photorecore`
 --
 ALTER TABLE `design_photorecore`
@@ -1587,7 +1673,7 @@ ALTER TABLE `design_admin`
 -- AUTO_INCREMENT for table `design_admin_log`
 --
 ALTER TABLE `design_admin_log`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=357;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=401;
 --
 -- AUTO_INCREMENT for table `design_area`
 --
@@ -1597,7 +1683,7 @@ ALTER TABLE `design_area`
 -- AUTO_INCREMENT for table `design_attachment`
 --
 ALTER TABLE `design_attachment`
-  MODIFY `id` int(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=113;
+  MODIFY `id` int(20) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=114;
 --
 -- AUTO_INCREMENT for table `design_auth_group`
 --
@@ -1607,7 +1693,7 @@ ALTER TABLE `design_auth_group`
 -- AUTO_INCREMENT for table `design_auth_rule`
 --
 ALTER TABLE `design_auth_rule`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=140;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=146;
 --
 -- AUTO_INCREMENT for table `design_bannerecore`
 --
@@ -1627,7 +1713,7 @@ ALTER TABLE `design_category`
 -- AUTO_INCREMENT for table `design_command`
 --
 ALTER TABLE `design_command`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=38;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'ID',AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT for table `design_config`
 --
@@ -1644,15 +1730,20 @@ ALTER TABLE `design_ems`
 ALTER TABLE `design_fontcolor`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID标识',AUTO_INCREMENT=2;
 --
+-- AUTO_INCREMENT for table `design_photocate`
+--
+ALTER TABLE `design_photocate`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id标识',AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `design_photorecore`
 --
 ALTER TABLE `design_photorecore`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID标识',AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID标识';
 --
 -- AUTO_INCREMENT for table `design_phototem`
 --
 ALTER TABLE `design_phototem`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID标识',AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID标识',AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `design_sms`
 --
@@ -1702,7 +1793,7 @@ ALTER TABLE `design_version`
 -- AUTO_INCREMENT for table `design_waterphoto`
 --
 ALTER TABLE `design_waterphoto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID标识',AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'ID标识';
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

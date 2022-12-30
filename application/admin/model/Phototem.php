@@ -37,4 +37,8 @@ class Phototem extends Model
 
 
 
+    public function photocate()
+    {
+        return $this->belongsTo('Photocate', 'photocate_id', 'id', [], 'LEFT')->setEagerlyType(0);
+    }
 }

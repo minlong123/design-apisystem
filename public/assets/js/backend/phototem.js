@@ -25,8 +25,9 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'id', title: __('Id')},
+                        {field: 'name', title: __('name'), operate: 'LIKE'},
                         {field: 'picimage', title: __('Picimage'), operate: false, events: Table.api.events.image, formatter: Table.api.formatter.image},
+                        {field: 'photocate.name', title: __('Photocate.name'), operate: 'LIKE'},
                         {
     field: 'createtime', title: __('Createtime'), operate: 'RANGE', addclass: 'datetimerange', formatter(value, row, index) {
         return new Date(parseInt(value) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
@@ -39,7 +40,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         return new Date(parseInt(value) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
     }
 },
-                        {field: 'name', title: __('Name'), operate: 'LIKE'},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
