@@ -7,7 +7,7 @@
     <title>照片墙模板设计界面</title>
     <link rel="stylesheet" href="/assets/layuiadmin/layui/css/layui.css" media="all">
     <link rel="stylesheet" href="/assets/layuiadmin/style/admin.css" media="all">
-
+    <script src="/assets/psd.min.js"></script>
 
 </head>
 
@@ -346,6 +346,15 @@ transform: scale(0.7);
 #copyaxios{
   display:none;
 }
+#uploadID_face{
+  width: 123px;
+    height: 38px;
+    position: absolute;
+    top: 0;
+    z-index: 9999999;
+    opacity: 0;
+    cursor:pointer;
+}
 </style>
 
 <div class="photo-box">
@@ -363,11 +372,12 @@ transform: scale(0.7);
     <form class="layui-form" id="logform">
 
 
-      <div class="layui-form-item" style="padding:0 20px;margin-left: 25px;">
+      <div class="layui-form-item" style="padding:0 20px;margin-left: 25px;position:relative;">
         <div class="layui-btn-container">
-          <button type="button" class="layui-btn layui-btn-normal test8" id="test8">上传PSD识别</button>
+          <button type="button" class="layui-btn layui-btn-normal">上传PSD识别</button>
           
         </div>
+        <input type="file" value="上传文件" name="saveFile" id="uploadID_face">
       </div>
 
       <div class="layui-form-item" style="padding:0 20px;margin-left: 25px;line-height:24px;color: #999;
@@ -452,6 +462,7 @@ transform: scale(0.7);
 
 var ctoken=getRandomCode();
 
+
 let currrboxs="";
 window.writebox=function(data){
   let html="";
@@ -463,6 +474,52 @@ window.writebox=function(data){
   $(".contents").append(html);
 
 }
+
+
+function handleReaderLoad(evt){
+  var PSD = require('psd');
+  let Base64Url = evt.target.result
+  let arrs=[];
+  PSD.fromURL(Base64Url).then(function (psd) {
+
+    $('.axios').empty();
+
+    let datas=psd.tree().children();
+    for(let i=0;i<datas.length;i++){
+      if(datas[i].top != 0){
+          let jsons={
+              "top":parseInt(datas[i].top)+1,
+              "left":parseInt(750-datas[i].left-datas[i].width)+1,
+              "width":parseInt(datas[i].width)-2,
+              "height":parseInt(datas[i].height)-2,
+          }
+          arrs.push(jsons);
+      }
+    }
+
+    $('.axios').empty();
+    writebox(arrs);
+    $('.axios').append("<span>"+JSON.stringify(arrs)+"</span>");
+    $("#copyaxios").css("display","block");
+    $("#copycon").attr('data-clipboard-text',JSON.stringify(arrs));
+    localStorage.setItem("photowall",JSON.stringify(arrs));
+
+
+  })
+}
+
+$('#uploadID_face').change(function(){
+  console.log(this.files)
+  var file=this.files[0];
+  const reader = new FileReader()
+  reader.onload = handleReaderLoad
+  reader.readAsDataURL(file)
+})
+
+
+
+
+
 
 // 更新所有盒子的坐标
 window.updatebox=function(){
@@ -556,39 +613,39 @@ layui.use(['form','laydate','layer','element','dropdown','slider','colorpicker']
 
 
 
-    upload.render({
-      elem: '#test8'
-      ,auto:true
-      ,drag:true
-      ,accept:"images"
-      ,exts:"PSD"
-      ,url:'/api/Design/uploads'
-      ,before: function(obj){
+    // upload.render({
+    //   elem: '#test8'
+    //   ,auto:true
+    //   ,drag:true
+    //   ,accept:"images"
+    //   ,exts:"PSD"
+    //   ,url:'/api/Design/uploads'
+    //   ,before: function(obj){
         
-        layer.msg('正在处理中……',{icon:16,time:false,shade:0});
+    //     layer.msg('正在处理中……',{icon:16,time:false,shade:0});
 
-      }
-      ,done:function(res){
+    //   }
+    //   ,done:function(res){
         
-        console.log(res);
-        if(res.code == 1){
+    //     console.log(res);
+    //     if(res.code == 1){
 
-          $('.axios').empty();
-          writebox(res.data.data);
+    //       $('.axios').empty();
+    //       writebox(res.data.data);
 
-          $('.axios').append("<span>"+JSON.stringify(res.data.data)+"</span>");
-          $("#copyaxios").css("display","block");
-          $("#copycon").attr('data-clipboard-text',JSON.stringify(res.data.data));
-          localStorage.setItem("photowall",JSON.stringify(res.data.data));
-        }else{
-          layer.msg("读取psd失败")
-        }
-        layer.closeAll();
-      },
-      error:function(res){
-        layer.closeAll();
-      }
-    });
+    //       $('.axios').append("<span>"+JSON.stringify(res.data.data)+"</span>");
+    //       $("#copyaxios").css("display","block");
+    //       $("#copycon").attr('data-clipboard-text',JSON.stringify(res.data.data));
+    //       localStorage.setItem("photowall",JSON.stringify(res.data.data));
+    //     }else{
+    //       layer.msg("读取psd失败")
+    //     }
+    //     layer.closeAll();
+    //   },
+    //   error:function(res){
+    //     layer.closeAll();
+    //   }
+    // });
 
 
     var lastClick = 0;
