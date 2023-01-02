@@ -23,7 +23,10 @@ $http = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] && $_SERVER['HTTPS'] != '
 define('SITE_URL', $http . '://' . $_SERVER['HTTP_HOST']); // 网站域名
 
 
-define('ALIOSS_ADDRESS','https://zaiercommon.oss-cn-beijing.aliyuncs.com/');
+// define('ALIOSS_ADDRESS','https://zaiercommon.oss-cn-beijing.aliyuncs.com/');
+define('ALIOSS_ADDRESS','https://zaiercommons.oss-cn-beijing.aliyuncs.com/');
+
+
 
 
 // 加载框架引导文件

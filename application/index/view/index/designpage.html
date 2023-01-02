@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>照片墙模板设计界面</title>
+    <link rel="stylesheet" href="/assets/layuiadmin/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/assets/layuiadmin/style/admin.css" media="all">
+
+
+</head>
+
+<body>
+
+
+<style>
+.photo-box {
+	display: table;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 70px;
+	margin-bottom: 100px;
+}
+
+.photo-box .contents {
+	display: table;
+	height: 1334px;
+	width: 750px;
+	margin: 0 auto;
+	clear: both;
+transform: scale(0.7);
+    top: -200px;
+	position: relative;
+	float: left;
+}
+
+.photo-box .contents::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 750px;
+	height:944px;
+	box-sizing: border-box;
+	border: 42px solid #ffd1a4;
+  z-index:1;
+}
+
+.photo-box .actions {
+	width: 391px;
+	float: left;
+}
+
+.con-row {
+	background: #e3e1e5;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	overflow: hidden;
+	cursor: pointer;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+  position: absolute;
+  z-index:99999;
+  box-sizing: border-box;
+
+}
+
+.actives{
+  background: red;
+}
+
+
+.export-style {
+	letter-spacing: 1px;
+}
+
+.export-style>input {
+	width: 70px;
+	border: 1px solid #eee;
+	height: 30px;
+	padding-left: 10px;
+}
+
+.con-row>i {
+	color: #ffffff;
+	font-size: 20px;
+	margin: 0 auto;
+}
+
+.row-img {
+	height: 100%;
+	position: relative;
+	z-index: 99;
+	transition: all ease 0.2s;
+	transform-origin: 0 0 0;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+#canva {
+	display: none;
+}
+
+.img-panel {
+	border: 2px dashed red;
+	font-size: 35px;
+	position: absolute;
+	height: 15px;
+	width: 15px;
+	left: 0;
+	top: 0;
+	display: none;
+	z-index: 99;
+	box-sizing: border-box;
+}
+
+.source-panel {
+	border: 2px dashed red;
+	font-size: 35px;
+	position: absolute;
+	height: 15px;
+	width: 15px;
+	left: 0;
+	top: 0;
+	display: none;
+	z-index: 99;
+	box-sizing: border-box;
+	transform-origin: 0 0 0;
+}
+
+.img-close {
+	position: absolute;
+	right: 29px;
+	top: -28px;
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	cursor: pointer;
+}
+
+.img-scale {
+	position: absolute;
+	left: 9px;
+	transform: translateX(-10px);
+	top: -28px;
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	cursor: pointer;
+}
+
+.img-scales {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-25px);
+	top: -28px;
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	cursor: pointer;
+}
+
+.img-rotates {
+	position: absolute;
+	right: -10px;
+	top: -28px;
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	cursor: pointer;
+}
+
+.img-rotatesleft {
+	position: absolute;
+	right: -50px;
+	top: -28px;
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	cursor: pointer;
+}
+
+.img-movetop {
+	position: absolute;
+	left: -20px;
+	top: -58px;
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	cursor: pointer;
+}
+
+.img-movebottom {
+	position: absolute;
+	left: 20px;
+	top: -58px;
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	cursor: pointer;
+}
+
+.img-moveleft {
+	position: absolute;
+	left: 62px;
+	top: -58px;
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	cursor: pointer;
+}
+
+.img-moveright {
+	position: absolute;
+	right: -35px;
+	top: -58px;
+	font-size: 14px;
+	color: red;
+	text-align: center;
+	cursor: pointer;
+}
+
+.text-contro-action {
+	width: 500px;
+	display: none;
+}
+
+.text-control {
+	position: absolute;
+	width: auto;
+	height: auto;
+	white-space: pre;
+	transform-origin: 0 0 0;
+	font-family: "微软雅黑";
+	font-size: 20px;
+	letter-spacing: 0;
+	color: rgba(0, 0, 0, 1);
+	border: 2px dashed #e3e1e5;
+	box-sizing: border-box;
+	left: 42px;
+	top: 42px;
+	line-height: 1;
+	cursor: pointer;
+	z-index: 999999999;
+	transition: all ease 0.2s;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+}
+
+.contro-active {
+	border: 2px dashed red;
+}
+
+#deltextcon {
+	display: none;
+}
+
+.fontwater {
+	resize: none;
+}
+
+.dropsource {
+	position: absolute;
+	width: auto;
+	height: 60px;
+	transform-origin: 0 0 0;
+	box-sizing: border-box;
+	left: 42px;
+	top: 42px;
+	cursor: pointer;
+	z-index: 999999999;
+	transition: all ease 0.2s;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	-khtml-user-select: none;
+	user-select: none;
+	overflow: hidden;
+}
+
+.dropsource>img {
+	max-height: 100%;
+	height: 100%;
+	border: 2px dashed #e3e1e5;
+	font-size: 0;
+	display: block;
+	box-sizing: border-box;
+}
+
+.source-active>img {
+	border: 2px dashed red;
+}
+
+#sourcelist {
+	width: 100%;
+	float: left;
+}
+
+.source-row {
+	display: inline-block;
+	height: 60px;
+	position: relative;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.source-row>img {
+	height: 100%;
+	max-height: 100%;
+}
+
+.source-row .closes {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	right: -15px;
+	top: -15px;
+	font-size: 30px;
+	color: red;
+	background: #ffe0e0;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 34px;
+	cursor: pointer;
+}
+.axios{
+  margin-bottom: 20px;
+    background-color: #282c34;
+    color: #FFFFFF;
+    padding: 20px;
+    box-sizing: content-box;
+}
+
+#copyaxios{
+  display:none;
+}
+</style>
+
+<div class="photo-box">
+
+    <h1 style="text-align:center;margin-bottom:30px;">照片墙模板设计界面</h1>
+
+  <div class="contents">
+
+  </div>
+
+  <div class="actions">
+
+    <div class="layui-tab-item layui-show">
+
+    <form class="layui-form" id="logform">
+
+
+      <div class="layui-form-item" style="padding:0 20px;margin-left: 25px;">
+        <div class="layui-btn-container">
+          <button type="button" class="layui-btn layui-btn-normal test8" id="test8">上传PSD识别</button>
+          
+        </div>
+      </div>
+
+      <div class="layui-form-item" style="padding:0 20px;margin-left: 25px;line-height:24px;color: #999;
+      font-size: 14px;letter-spacing:1px;position:relative;top:-15px">
+        上传PSD识别后,点击格子可以微调坐标和宽高
+        </div>
+
+
+        
+      </div>
+
+      <div class="text-contro-action">
+
+        <div class="layui-form-item" style="padding:0 20px;">
+          <span class="layui-form-label">格子左边距<strong style="color:red;">*</strong></span>
+          <div class="layui-input-block">
+            <input type="number" oninput="setControText()" value="0" placeholder="请输入格子的左边距" class="layui-input boxleft">
+          </div>
+        </div>
+  
+        <div class="layui-form-item" style="padding:0 20px;">
+          <span class="layui-form-label">格子上边距<strong style="color:red;">*</strong></span>
+          <div class="layui-input-block">
+            <input type="number" oninput="setControText()" value="0" placeholder="请输入格子的上边距" class="layui-input boxtop">
+          </div>
+        </div>
+  
+     
+        <div class="layui-form-item" style="padding:0 20px;">
+          <span class="layui-form-label">格子宽度<strong style="color:red;">*</strong></span>
+          <div class="layui-input-block">
+            <input type="number" oninput="setControText()" value="0" placeholder="请输入格子的宽度" class="layui-input boxwidth">
+          </div>
+        </div>
+  
+        <div class="layui-form-item" style="padding:0 20px;">
+          <span class="layui-form-label">格子高度<strong style="color:red;">*</strong></span>
+          <div class="layui-input-block">
+            <input type="number" oninput="setControText()" value="0" placeholder="请输入格子的高度" class="layui-input boxheight">
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="layui-form-item" style="padding:0 20px;margin-left: 25px;">
+        
+        <div class="axios">
+          - - - - - - - -
+        </div>
+        
+        
+        <div class="layui-btn-container" id="copyaxios">
+
+
+          <button type="button" id="copycon" data-clipboard-text="" style="background-color:#2abce3;" class="layui-btn layui-btn-normal">复制所有坐标数据</button>
+          <button type="button" id="refressh" data-clipboard-text="" class="layui-btn layui-btn-normal">刷新</button>
+        </div>
+      </div>
+
+
+    
+    
+      </form>
+
+  </div>
+
+</div>
+
+
+</div>
+
+
+
+<script src="/assets/layuiadmin/layui/layui.js"></script>  
+<script src="/assets/jcrop/jquery-1.5.2.min.js"></script>
+<script src="/assets/bootstrap/common.js"></script>
+<script src="/assets/clipboard.min.js"></script>
+
+
+
+<script>
+
+var ctoken=getRandomCode();
+
+let currrboxs="";
+window.writebox=function(data){
+  let html="";
+  for(let i=0;i<data.length;i++){
+
+    html+="<div class='con-row' data-width="+data[i].width+" data-height="+data[i].height+" data-left="+data[i].left+" data-top="+data[i].top+" style='width:"+data[i].width+"px;height:"+data[i].height+"px;top:"+data[i].top+"px;left:"+data[i].left+"px'>";
+    html+="<i class='layui-icon layui-icon-picture'></i></div>"
+  }
+  $(".contents").append(html);
+
+}
+
+// 更新所有盒子的坐标
+window.updatebox=function(){
+
+  let arrs=[];
+  $(".con-row").each(function(index,item){
+
+    let jsons={
+        "top":parseInt($(item).attr("data-top")),
+        "left":parseInt($(item).attr("data-left")),
+        "width":parseInt($(item).attr("data-width")),
+        "height":parseInt($(item).attr("data-height")),
+    }
+    arrs.push(jsons);
+    $('.axios').empty();
+    $('.axios').append("<span>"+JSON.stringify(arrs)+"</span>");
+    $("#copycon").attr('data-clipboard-text',JSON.stringify(arrs));
+    localStorage.setItem("photowall",JSON.stringify(arrs));
+
+  })
+
+}
+
+$("#refressh").click(function(){
+  window.history.go(0);
+})
+    
+let clipboard = new ClipboardJS('#copycon')
+    clipboard.on('success', function (e) {
+        layer.msg("已复制");
+    })
+    clipboard.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+
+
+
+window.setControText=function(){
+  if(currrboxs == ""){
+    layer.msg("未选中格子");
+    return;
+  }
+
+  currrboxs.css({
+    'top':$(".boxtop").val()+"px",
+    'left':$(".boxleft").val()+"px",
+    'width':$(".boxwidth").val()+"px",
+    'height':$(".boxheight").val()+"px",
+  })
+
+  currrboxs.attr({
+    'data-left':$(".boxleft").val(),
+    'data-top':$(".boxtop").val(),
+    'data-width':$(".boxwidth").val(),
+    'data-height':$(".boxheight").val(),
+  })
+  updatebox();
+
+}
+
+layui.use(['form','laydate','layer','element','dropdown','slider','colorpicker'], function(){
+    var $ = layui.jquery;
+    var upload = layui.upload;
+    var element=layui.element
+    var form = layui.form;
+    var layer = layui.layer;
+    var layedit = layui.layedit;
+    var laydate = layui.laydate;
+    var slider = layui.slider;
+    dropdown=layui.dropdown;
+    var colorpicker=layui.colorpicker;
+
+
+
+    $("body").on('click',".con-row",function(){
+
+      $('.con-row').removeClass("actives");
+      $(this).addClass("actives");      
+
+      currrboxs=$(this);
+      $(".text-contro-action").css({
+        'display':'block'
+      })
+      $(".boxleft").val($(this).attr("data-left"));
+      $(".boxtop").val($(this).attr("data-top"));
+      $(".boxwidth").val($(this).attr("data-width"));
+      $(".boxheight").val($(this).attr("data-height"));
+
+    })
+
+
+
+    upload.render({
+      elem: '#test8'
+      ,auto:true
+      ,drag:true
+      ,accept:"images"
+      ,exts:"PSD"
+      ,url:'/api/Design/uploads'
+      ,before: function(obj){
+        
+        layer.msg('正在处理中……',{icon:16,time:false,shade:0});
+
+      }
+      ,done:function(res){
+        
+        console.log(res);
+        if(res.code == 1){
+
+          $('.axios').empty();
+          writebox(res.data.data);
+
+          $('.axios').append("<span>"+JSON.stringify(res.data.data)+"</span>");
+          $("#copyaxios").css("display","block");
+          $("#copycon").attr('data-clipboard-text',JSON.stringify(res.data.data));
+          localStorage.setItem("photowall",JSON.stringify(res.data.data));
+        }else{
+          layer.msg("读取psd失败")
+        }
+        layer.closeAll();
+      },
+      error:function(res){
+        layer.closeAll();
+      }
+    });
+
+
+    var lastClick = 0;
+    function lockClick(){
+      var nowClick = new Date();
+      if (lastClick === 0) {
+          lastClick = nowClick;
+          return true;
+      } else {
+          if (Math.round((nowClick.getTime() - lastClick.getTime())) > 2000) {
+              lastClick = nowClick;
+              return true;
+          }
+          else {
+              lastClick = nowClick;
+              return false
+          }
+      }
+    };
+    
+
+  $('.downlooimg').click(function(){
+
+    if(!lockClick()){
+      return;
+    }
+    layer.msg('正在生成中……',{icon:16,time:false,shade:0});
+
+
+    let tags=false;
+    $(".con-row").each(function(index,item){
+      if($(item).find("img").attr("src") == null || $(item).find("img").attr("src") == undefined){
+        tags=true;
+      }
+    })
+
+    if(tags){
+      layer.closeAll();
+      layer.msg("请上传完所有图片再合并导出");
+      tags=false;
+      
+      return;
+    }
+
+    if(exportwidth > 500){
+      drawbigphoto();
+    }else{
+      drawphoto();
+    }
+
+  });
+
+
+  form.on('select(aihaooossss)',function(data){
+    setControText();
+  })
+
+  form.on('select(aihaooossssa)',function(data){
+    dpi=parseInt($("#dpiselect").val());
+  })
+
+
+  colorpicker.render({
+    elem: '#test-form'
+    ,color: 'rgba(0,0,0,1)'
+    ,format: 'rgb'
+    ,alpha: true
+    ,done: function(color){
+      $('#test-form-input').val(color);
+      opac=color;
+      setControText();
+    }
+  });
+
+  var slinum=slider.render({
+    elem: '#slideTest8'
+    ,input: true
+    ,value:0
+    ,min:0
+    ,max:360
+    ,change: function(value){
+      degrees=value;
+
+      setControText();
+    }
+  });
+
+});
+</script>
+</body>
+</html>

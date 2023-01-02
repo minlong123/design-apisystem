@@ -72,6 +72,7 @@ class Common extends Api
         //必须设定cdnurl为空,否则cdnurl函数计算错误
         Config::set('upload.cdnurl', '');
         $chunkid = $this->request->post("chunkid");
+        
         if ($chunkid) {
             if (!Config::get('upload.chunking')) {
                 $this->error(__('Chunk file disabled'));

@@ -10,6 +10,9 @@ use think\Cache;
 use think\Loader;
 use think\request;
 use think\Log;
+use think\Config;
+use app\common\exception\UploadException;
+use app\common\library\Upload;
 
 
 /**
@@ -17,8 +20,62 @@ use think\Log;
  */
 class Design extends Api
 {
-    protected $noNeedLogin = ['getphotoparam','getCateImgDetail','getphototem','getdocument','getdocumentDetails','savewashphoto','getBanners','savebanerre','savephotowall'];
+    protected $noNeedLogin = ['getphotoparam','getCateImgDetail','getphototem','getdocument','getdocumentDetails','savewashphoto','getBanners','savebanerre','savephotowall','uploads'];
     protected $noNeedRight = ['*'];
+
+
+    /**
+     * 上传文件
+     * @ApiMethod (POST)
+     * @param File $file 文件流
+     */
+    public function uploads()
+    {
+        Config::set('default_return_type', 'json');
+        //必须设定cdnurl为空,否则cdnurl函数计算错误
+        Config::set('upload.cdnurl', '');
+
+        $attachment = null;
+        //默认普通上传文件
+        $file = $this->request->file('file');
+        try {
+            $upload = new Upload($file);
+            $attachment = $upload->upload();
+        } catch (UploadException $e) {
+            $this->error($e->getMessage());
+        }
+
+         
+        //   处理该文件
+        $im = new \Imagick(ROOT_PATH."public/".$attachment->url);
+        $counts=$im->getNumberImages();
+        
+        $arrs=[];
+        for ($i = 0, $num_layers = $im->getNumberImages(); $i < $num_layers; ++$i) {
+        
+            if($i<3){
+                continue;
+            }
+            $im->setIteratorIndex($i);      //or this is kinda redundant
+            $pagedata=$im->getImagePage();
+            $data=[
+                "left"=>750-$pagedata["x"]-$pagedata["width"]+1,
+                "top"=>$pagedata["y"]+1,
+                "width"=>$pagedata["width"]-2,
+                "height"=>$pagedata["height"]-2
+            ];
+            array_push($arrs,$data);
+        }
+        $retdata['data']=$arrs;
+
+
+
+
+        $this->success(__('Uploaded successful'), ['data'=>$arrs,'url' => $attachment->url, 'fullurl' => cdnurl($attachment->url, true)]);
+        
+
+    }
+
 
 
 
@@ -252,6 +309,7 @@ class Design extends Api
             'catename'=>$sourcman,
             'allimg'=>$res,
             'photowall'=>$phoata,
+            'oldphoto'=>json_decode($phototem['coordinate'],true)
         ];
         $this->success('请求成功',$data);
         

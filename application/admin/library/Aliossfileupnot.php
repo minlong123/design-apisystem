@@ -15,8 +15,8 @@ use OSS\Core\OssException;
 class Aliossfileupnot{
 
     // 阿里云主账号AccessKey拥有所有API的访问权限，风险很高。强烈建议您创建并使用RAM账号进行API访问或日常运维，请登录https://ram.console.aliyun.com创建RAM账号。
-    public $accessKeyId = "LTAI5tHLL63yAw7Bw82NkADp";
-    public  $accessKeySecret = "nEQ46Yr6AJOHVC77p69kRR3Elp6aep";
+    public $accessKeyId = "";
+    public  $accessKeySecret = "";
     // Endpoint以杭州为例，其它Region请按实际情况填写。
     public  $endpoint = "http://oss-cn-beijing.aliyuncs.com";
     
@@ -29,7 +29,7 @@ class Aliossfileupnot{
         // yourEndpoint填写Bucket所在地域对应的Endpoint。以华东1（杭州）为例，Endpoint填写为https://oss-cn-hangzhou.aliyuncs.com。
         $endpoint = $this->endpoint;
         // 填写Bucket名称，例如examplebucket。
-        $bucket= "zaiercommon";
+        $bucket= "zaiercommons";
         // 填写Object完整路径，例如exampledir/exampleobject.txt。Object完整路径中不能包含Bucket名称。
         $tobjects="";
         $trutime="";
